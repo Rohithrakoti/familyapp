@@ -21,7 +21,6 @@ function addEvent() {
     events.push({ name, fromDate, toDate, imageUrl, details });
     localStorage.setItem('familyEvents', JSON.stringify(events));
 
-    // reset form
     document.getElementById('event-name').value = '';
     document.getElementById('event-from-date').value = '';
     document.getElementById('event-to-date').value = '';
@@ -85,7 +84,6 @@ window.onclick = function(e) {
         closeModal();
     }
 
-    // also close image modal
     if (e.target === document.getElementById('image-modal')) {
         closeImage();
     }
@@ -99,27 +97,29 @@ function loadGallery() {
 
     container.innerHTML = '';
 
+    console.log("Gallery Data:", window.galleryImages); // 👈 DEBUG
+
     if (!window.galleryImages) return;
 
-    galleryImages.forEach(src => {
+    window.galleryImages.forEach(item => {
         const card = document.createElement('div');
         card.className = 'card';
 
         const img = document.createElement('img');
-        img.src = src;
-        img.alt = '';
+        img.src = item.src;
 
-        // remove broken images
-        img.onerror = () => card.remove();
+        const title = document.createElement('p');
+        title.innerText = item.name;
+        title.style.textAlign = "center";
+        title.style.fontWeight = "bold";
 
-        // 🔥 click to open full image
         img.onclick = () => {
             document.getElementById("image-modal").style.display = "block";
-            document.getElementById("modal-img").src = src;
+            document.getElementById("modal-img").src = item.src;
         };
 
-        // ✅ IMPORTANT
         card.appendChild(img);
+        card.appendChild(title);
         container.appendChild(card);
     });
 }

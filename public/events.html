@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mana Kutumbam - Events</title>
+    <title>Family Events</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="events-page">
+
 <header>
     <h1>Family Events</h1>
     <nav>
@@ -20,56 +22,64 @@
 </header>
 
 <main>
+
     <section class="hero">
         <h2>Upcoming Events</h2>
     </section>
 
     <section class="cards">
+
+        <!-- Event List -->
         <div class="card">
             <h3>Event List</h3>
-            <ul id="event-list">
-                <!-- Events will be loaded here -->
-            </ul>
+            <ul id="event-list"></ul>
         </div>
-        <div class="card">
+
+        <!-- Add Event -->
+        <div class="card add-event-form">
             <h3>Add Event</h3>
-            <form class="add-event-form">
-                <label for="event-name">Event Name:</label>
-                <input id="event-name" placeholder="Event Name" required>
-                
-                <label for="event-from-date">From Date:</label>
-                <input id="event-from-date" type="date" required>
-                
-                <label for="event-to-date">To Date:</label>
-                <input id="event-to-date" type="date" required>
-                
-                <label for="event-image">Image URL:</label>
-                <input id="event-image" placeholder="Image URL (e.g., images/event1.jpg)">
-                
-                <label for="event-details">Event Details:</label>
-                <textarea id="event-details" placeholder="Enter event details (e.g., location, description)"></textarea>
-                
-                <button type="button" onclick="addEvent()">Add Event</button>
-            </form>
+
+            <label>Event Name:</label>
+            <input type="text" id="event-name" placeholder="Event Name">
+
+            <label>From Date:</label>
+            <input type="date" id="event-from-date">
+
+            <label>To Date:</label>
+            <input type="date" id="event-to-date">
+
+            <label>Image URL:</label>
+            <input type="text" id="event-image" placeholder="images/sample.jpg">
+
+            <label>Details:</label>
+            <textarea id="event-details"></textarea>
+
+            <button onclick="addEvent()">Add Event</button>
         </div>
+
     </section>
+
 </main>
 
 <footer>
     <p>&copy; Mana Kutumbam</p>
 </footer>
 
-<!-- Modal for event details -->
+<!-- 🔥 EVENT MODAL -->
 <div id="event-modal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
+
         <h2 id="modal-title"></h2>
         <p id="modal-dates"></p>
-        <img id="modal-image" src="" alt="Event Image" style="max-width: 100%; height: auto;">
+
+        <img id="modal-image" alt="Event Image">
+
         <p id="modal-details"></p>
     </div>
 </div>
 
 <script src="js/script.js"></script>
+
 </body>
 </html>
