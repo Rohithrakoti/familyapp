@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mana Kutumbam - Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="gallery-page">
+
+<header>
+    <h1>Family Gallery</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="social.html">Social Media</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <img src="images/hero.jpg" alt="Family Logo" class="hero-logo" width="100">
+        <h2>Photos</h2>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="cards" id="gallery-container">
+        <!-- Images will load here dynamically -->
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; Mana Kutumbam</p>
+</footer>
+
+<!-- 🔥 IMAGE LIGHTBOX -->
+<div id="image-modal" class="image-modal">
+    <span class="close-btn" onclick="closeImage()">×</span>
+    <img id="modal-img">
+</div>
+
+<!-- JS FILES -->
+<script src="js/gallery-images.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

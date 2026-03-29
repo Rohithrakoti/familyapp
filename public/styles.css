@@ -1,0 +1,245 @@
+/* ================= GLOBAL ================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* ================= DEFAULT CARDS (ALL PAGES) ================= */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    color: #333;
+}
+
+/* ================= GALLERY ONLY ================= */
+body.gallery-page .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+body.gallery-page .card {
+    padding: 0;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+body.gallery-page .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+body.gallery-page .card:hover img {
+    transform: scale(1.05);
+}
+
+/* ================= BUTTON ================= */
+.card a {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card a:hover {
+    background: #0056b3;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* ================= PAGE COLORS ================= */
+body.index-page header { background-color: #4a90e2; }
+body.index-page .hero { background-color: #e8f4fd; }
+body.index-page footer { background-color: #333; }
+
+body.events-page header { background-color: #28a745; }
+body.events-page .hero { background-color: #d4edda; }
+body.events-page footer { background-color: #155724; }
+
+body.gallery-page header { background-color: #6f42c1; }
+body.gallery-page .hero { background-color: #e2d9f3; }
+body.gallery-page footer { background-color: #4c2882; }
+
+body.social-page header { background-color: #fd7e14; }
+body.social-page .hero { background-color: #ffeaa7; }
+body.social-page footer { background-color: #d9534f; }
+
+/* ================= EVENT LIST ================= */
+#event-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#event-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+#event-list li button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* ================= FORM ================= */
+.add-event-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.add-event-form input,
+.add-event-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.add-event-form button {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+}
+
+/* ================= MODAL (EVENT) ================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ================= IMAGE MODAL ================= */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+}
+
+.image-modal img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 85%;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
